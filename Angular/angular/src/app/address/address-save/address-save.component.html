@@ -1,0 +1,32 @@
+<html>
+<main>
+<div class="rel"></div>
+  <div class="breadcrumb_outer hidden-xs">
+  <div class="container">
+  <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+         <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Save Address</li>
+      </ul>
+  </nav>
+  </div>
+  </div>
+  <section class="contact-us-area">
+  <div class="auto-container">
+  <div class=" contact-form wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1000ms">
+<form (ngSubmit) = "onAddressSave()">      
+  <div class="form-group">  Enter Address Id :</div>
+  <div class="form-group "> <input type="number" name="id"  class="form-control" [(ngModel)]="address.id"    ></div>
+  <div class="form-group">  Enter Area :</div>
+  <div class="form-group "> <input type="text" name="area" id="area"  class="form-control" [(ngModel)]="address.area"    ></div>
+  <div class="form-group">  Enter City :</div>
+  <div class="form-group "> <input type="text" name="city" id="city"  class="form-control" [(ngModel)]="address.city"    ></div>
+  <div class="form-group "> <button type="submit"  value="submit" name="submit" class="primary-btn hvr-bounce-to-left" ><span class="btn-text">Submit</span> <strong class="icon"><span class="f-icon flaticon-letter110"></span></strong></button>
+  </div>
+ </form>
+  </div>
+  </div>
+  </section> <!--contact-us area ends here-->
+  </main>
+       
+</html>

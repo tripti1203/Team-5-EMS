@@ -1,0 +1,45 @@
+<main>
+    <br>
+  <div class="rel"></div>
+  <div class="breadcrumb_outer hidden-xs">
+  <div class="container">
+  <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+         <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Address Of All Consumers </li>
+      </ul>
+  </nav>
+  </div>
+  </div>
+  <div class="off_white">
+  
+  <div class="mid_area">
+      <div class="pro_box">
+                  <table class="table table-stripped">
+                  <thead class="thead-light">
+                      <tr>
+                      <th>Consumer Id</th>&nbsp;&nbsp;&nbsp;
+                      <th>First Name </th>&nbsp;&nbsp;&nbsp;
+                      <th>Last Name</th>&nbsp;&nbsp;&nbsp;
+                      <th>Address Id</th>&nbsp;&nbsp;&nbsp;
+                      </thead>
+              
+                      <tbody>
+                    <tr *ngFor = " let consumer of consumer">
+                      <td>{{consumer.id}}</td>&nbsp;&nbsp;&nbsp;
+                      <td>{{consumer.firstName}}</td>&nbsp;&nbsp;&nbsp;
+                      <td>{{consumer.lastName}}</td>&nbsp;&nbsp;&nbsp;
+                      <td>{{consumer.address?.id}}</td>&nbsp;&nbsp;&nbsp;
+                     <!-- <button>Delete</button>-->
+                     <!--<button  type = "submit" class="button-24" (click)="deleteConsumer(consumer.address?.id)" role="button">Delete</button>&nbsp;&nbsp;&nbsp;-->
+                     <button    type = "submit" class="button-27" role="button">Update</button>&nbsp;&nbsp;&nbsp;
+                  </tr>
+      </tbody>
+      </table>
+  </div>
+  
+    <div class="clearfix"></div>
+  </div>
+  
+  </div>
+  </main>

@@ -1,0 +1,67 @@
+-->BillByCityAndAREA:
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `billsByCityAndArea`(in iarea varchar(200),in icity varchar(200))
+BEGIN
+select a.id ,substring((a.date_time),1,4) as 'YEAR',substring((a.date_time),6,2) as 'MONTH' 
+,a.date_time  ,a.connection_id ,
+a.consumer_id ,
+c.id as connection_type_id,
+a.new_reading ,a.billed_units, a.total_amount ,a.old_reading
+from bill a
+join connections b on a.connection_id = b.id
+join connection_type c on c.id = b.connection_type_id
+join consumer d on d.id = b.consumer_id
+join address e on e.id = d.address_id
+where e.area = iarea and e.city = icity
+order by substring((a.date_time),1,4),substring((a.date_time),6,2),a.id;
+END
+
+-->BillsByMonthAndYear
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `billsByMonthAndYear`(in iyear int,in imonth int)
+BEGIN
+select a.id, substring((a.date_time),1,4) as 'YEAR',substring((a.date_time),6,2) as 'MONTH'
+,a.date_time,a.connection_id,
+a.consumer_id,a.connection_type_id,
+c.type,
+a.new_reading,a.old_reading,a.billed_units, a.total_amount
+from bill a
+join connections b on a.connection_id = b.id
+join connection_type c on c.id = b.connection_type_id
+where substring((a.date_time),1,4) = iyear and substring((a.date_time),6,2)=imonth
+order by substring((a.date_time),1,4),substring((a.date_time),6,2),a.id;
+END
+
+
+-->BillsGeneratedByConnectionId
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `generateBillByConnectionId`(in inputId int ,in currentReading int)
+BEGIN
+declare consumerId int default 0;
+declare connectionTypeId int default 0;
+declare oldReading int default 0;
+declare newReading int default 0;
+declare billedUnits int default 0;
+declare fixedCharge decimal(10,2) default 0;
+declare perUnitCharge decimal(10,2) default 0;
+declare totalAmount decimal(10,2) default 0;
+
+
+
+select consumer_id,connection_type_id,old_reading into consumerId, connectionTypeId,oldReading
+from connections where id = inputId;
+
+select fixed_charge,per_unit_charge into fixedCharge,perUnitCharge
+from connection_type where id = connectionTypeId;
+
+set newReading = currentReading;
+update connections set old_reading = currentReading where id = inputId;
+set billedUnits = newReading - oldReading;
+set totalAmount = fixedCharge + (billedUnits * perUnitCharge);
+
+insert into bill 
+(date_time,connection_id, consumer_id, connection_type_id, old_reading, new_reading, billed_units, total_amount)
+values(current_timestamp(),inputId,consumerId,connectionTypeId,oldReading,newReading,billedUnits,totalAmount);
+
+
+END

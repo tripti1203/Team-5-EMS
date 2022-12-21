@@ -1,0 +1,53 @@
+<main>
+    <br>
+  <div class="rel"></div>
+  <div class="breadcrumb_outer hidden-xs">
+  <div class="container">
+  <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+         <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Bills Of All Consumers </li>
+      </ul>
+  </nav>
+  </div>
+  </div>
+  <div class="off_white">
+  
+  <div class="mid_area">
+      <div class="pro_box">
+                  <table class="table table-stripped">
+                  <thead class="thead-light">
+                      <tr>
+                      <th>BillId</th>
+                      <th>DateTime</th>
+                      <th>OldReading</th>
+                      <th>NewReading</th>
+                      <th>BilledUnits</th>
+                      <th>Total</th>
+                      <th>ConsumerId</th>
+                      <th>ConnectionId</th>
+                      <th>ConnectionTypeId</th>
+                      </thead>
+              
+                      <tbody>
+                    <tr *ngFor = "let bill of bills">
+                    <td>{{bill.id}}</td>
+                   <td>{{bill.dateTime}}</td>
+                    <td>{{bill.oldReading}}</td>
+                        <td>{{bill.newReading}}</td>
+                   <td>{{bill.billedUnits}}</td>
+                    <td>{{bill.totalAmount}}</td>
+                        <td>{{bill.consumer?.id}}</td>
+                   <td>{{bill.connections?.id}}</td>
+                    <td>{{bill.connectionType?.id}}</td>
+                  </tr>
+      </tbody>
+      </table>
+  </div>
+  
+    <div class="clearfix"></div>
+  </div>
+  
+  </div>
+  </main>
+ 

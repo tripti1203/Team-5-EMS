@@ -1,0 +1,47 @@
+<main>
+    <br>
+    <div class="rel"></div>
+    <div class="breadcrumb_outer hidden-xs">
+    <div class="container">
+    <nav aria-label="breadcrumb">
+        <ul class="breadcrumb">
+           <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">All Connection Details</li>
+        </ul>
+    </nav>
+    </div>
+    
+
+  <div class="off_white">
+  
+  <div class="mid_area">
+      <div class="pro_box">
+                  <table class="table table-stripped">
+                  <thead class="thead-light">
+                      <tr>
+                      <th>ConnectionId</th>
+                      <th>Old Reading</th>
+                      <th>Added On</th>
+                      <th>ConsumerId</th>
+                      <th>ConnectionTypeId</th>
+                      </thead>
+              
+                      <tbody>
+                    <tr *ngFor = "let connections of  connections">
+                    <td>{{connections.id}}</td>
+                    <td>{{connections.oldReading}}</td>
+                        <td>{{connections.addedOn}}</td>
+                        <td>{{connections.consumer?.id}}</td>
+                    <td>{{connections.connectionType?.id}}</td> &nbsp;&nbsp;
+                    <button  [routerLink]="" type = "submit" class="button-27" role="button">Update</button>
+                  </tr>
+      </tbody>
+      </table>
+    
+  </div>
+  
+    <div class="clearfix"></div>
+  </div>
+</div>
+</div>
+</main>  

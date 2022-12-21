@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Electrcity Management System ">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Electrcity Management System</title>
+<style type="text/css">
+  .img-fluid1{
+    max-width: 100%;
+    height: 100%;
+    display: block;
+  }
+</style>
+
+ </head>
+<body>
+
+<header>
+ <section class="logo">
+        <img src="assets/images/logo.jpg" alt="logo">
+      </section>
+      <nav  class="topnav" id="myTopnav">
+        <ul>
+          <li>
+          <a >HOME</a>
+          </li>
+          <li class="sub-menu">
+            <a  >OUR SERVICES</a>
+            <ul>
+               <li><a  routerLink = "address/save" routerLinkActive = "active" href="">REGISTER CONSUMER</a></li>
+               <li><a href="" routerLink = "bill/generate" routerLinkActive = "active"  >GENERATE CONSUMER BILL</a></li>
+                <li><a  routerLink = "bill/All" routerLinkActive = "active" href="">DISPLAY ALL BILLS</a></li>
+              <li><a href=""  routerLink = "bill/billcity" routerLinkActive = "active">DISPLAY BILL BY CITY AND AREA</a></li>
+              <li><a href=""routerLink = "bill/billyear" routerLinkActive = "active" >DISPLAY BILL BY MONTH AND YEAR</a></li>
+              <li><a  routerLink = "consumer/All" routerLinkActive = "active" href="">UPDATE/DELETE CONSUMER</a></li>
+              <li><a  routerLink = "address/addressAll" routerLinkActive = "active"href="">DISPLAY/UPDATE ADDRESS</a></li>
+              <li><a  routerLink = "connections/All" routerLinkActive = "active" href="">DISPLAY/UPDATE CONNECTIONS</a></li>
+             
+            </ul>
+          </li>
+        <li>
+          <a>CONTACT US</a>
+        </li>
+            <li>
+                <a>LOGIN</a>
+            </li>
+  </ul>
+</nav>      
+ <div class="menu-toogle" onclick="myFunction()" ><i class="fa fa-bars" aria-hidden="true"></i>
+ </div>                             
+</header>
+<main>
+  <div class="rel"></div>
+  <div class="breadcrumb_outer hidden-xs">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  </div>
+</main>
+<footer>
+
+  <section class="row2">
+    <section class="Link wow fadeInUp animated" data-wow-delay="0ms" data-wow-duration="1000ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 0ms; animation-name: fadeInUp;">
+      <h4 class="desk_show">Quick Links</h4>
+      <section class="bb_bottom"></section>
+      <section class="ft_link">
+                <a href="" title="Home">Home</a><br>
+                <a href="" title="Contact Us">Login</a><br>
+      </section> <!-- ft-link ends here-->
+    </section> <!--link ends here-->
+    <section class="Services1 wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1000ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInUp;">
+      <h4 class="desk_show">Our Services</h4>
+      <section class="bb_bottom"></section>
+      <section class="ft_link">
+        <a href="">Register Consumer</a><br>
+                 <a href="" title="Wedding Management">Generate Bill</a><br>
+         <a href="" title="Corporate Events">Display All Bills</a><br>
+                 <a href="" title="Social Events">Display bill for ConsumerId</a><br>
+                 <a href="" title="Venues">Display bill for city and area </a><br> 
+                 <a href="">Display bill for month and year</a><br>
+                 <a href="">Update/Delete Consumer</a>
+                 <a href="">Update Address</a>
+                 <a href="">Update Connections</a>
+                 <a href="">Update Bills</a>    
+              </section>                        
+    </section> 
+    <section class="social wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1000ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 600ms; animation-name: fadeInUp;">
+      <h4 class="desk_show">Follow Us On </h4>
+      <section class="bb_bottom"></section>
+      <section class="f_dd_box">
+                      <p class="ft-social">
+                            <a href="https://www.facebook.com/indiagramevents/" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i>Facebook</a>
+                            <a href="https://twitter.com/IndiagramPvt" title="Twitter" target="_blank"><i class="fab fa-twitter"></i>Twitter</a>
+                            <a href="https://www.instagram.com/indiagramevents/" title="Instagram" target="_blank"><i class="fab fa-instagram"></i>Instagram</a>
+                      </p>
+
+                  </section> <!--f_dd_box ends here-->
+
+    </section> <!--social ends here-->
+    <section class="logo1 wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1000ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInUp;">
+      
+                <p class="ft-logo"><a href="/" title="Indiagram Events Pvt. Ltd"><img src="assets/images/logo.jpg" alt="Indiagram Events Pvt. Ltd" title="Indiagram Events Pvt. Ltd" class="image1"></a></p>
+
+                <p class="copy">Copyright © 2022, Electricity Management Corporation. <span>All Rights Reserved</span> </p>
+    </section> <!--logo1 ends here-->
+  </section> <!--row ends heree-->
+</footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<main>
+    <div class="rel"></div>
+  <div class="breadcrumb_outer hidden-xs">
+  <div class="container">
+  <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+         <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Add Bill Details</li>
+      </ul>
+  </nav>
+  </div>
+  </div>
+  <section class="contact-us-area">
+  <div class="auto-container">
+    
+
+  <div class=" contact-form wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1000ms">
+      <form (ngSubmit) = "onConnectionSave()">     
+  <div class="form-group">  Enter  Old Reading :</div>
+  <div class="form-group "> <input type="number" name="oldReading"  class="form-control" [(ngModel)]="connections.oldReading"    ></div>
+  <div class="form-group">  Enter Added On :</div>
+  <div class="form-group "> <input type="datetime-local" name="date" id="date"  class="form-control" [(ngModel)]="connections.addedOn"    ></div>
+
+  <div class="form-group">  Enter Consumer Id For Which You Want to Add Connection ? </div>
+  <div class="form-group "> <input type="number" name="consumerId" id="consumerId"  class="form-control" [(ngModel)]="connections.consumer.id"    ></div>
+  
+  <div class="form-group">  Enter the Connection-Type Id For Which For Which You Want to Add Connection ? </div>
+  <div class="form-group "> <input type="number" name="connectionid" id="connectionid"  class="form-control" [(ngModel)]=" connections.connectionType.id"    ></div>
+  <div class="form-group "> <button type="submit"  value="submit" name="submit" class="primary-btn hvr-bounce-to-left" ><span class="btn-text">Submit</span> <strong class="icon"><span class="f-icon flaticon-letter110"></span></strong></button>
+  </div>
+ </form>
+  </div>
+  </div>
+  </section> 
+  </main>
+  </html>
+       
